@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Page</title>
+</head>
+<body>
+<h1>Question 1:</h1>
+<select id="question1">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+</select>
+
+<h1>Question 2:</h1>
+<input type="text" id="question2" placeholder="Enter answers separated by commas">
+
+
+<h1>Question 3:</h1>
+<input type="text" id="question3" placeholder="Enter answers separated by commas">
+
+
+<button onclick="calculateHV()">Calculate HV_VAR</button>
+
+
+<p id="result"></p>
+
+<script>
+function calculateHV() {
+  var hv_var = 0;
+  var answer1 = document.getElementById("question1").value;
+  var answer2 = document.getElementById("question2").value.split(",").map(Number);
+
+  if (answer1 == 1 || answer1 == 2 || answer1 == 5) {
+    hv_var += 3;
+  } else if (answer1 == 3 || answer1 == 4 || answer1 == 6 || answer1 == 8) {
+    hv_var += 1;
+  } else if (answer1 == 7) {
+    hv_var += 2;
+  }
+
+  if (answer2.filter(value => [1, 2, 4, 5].includes(value)).length >= 2) {
+    if (answer1 == 1 || answer1 == 2 || answer1 == 3 || answer1 == 5) {
+      hv_var += 2;
+    } else if (answer1 == 4 || answer1 == 6 || answer1 == 7 || answer1 == 8) {
+      hv_var += 1;
+    }
+  }
+
+  document.getElementById("result").textContent = "HV_VAR: " + hv_var;
+}
+</script>
+</body>
+</html>
