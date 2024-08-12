@@ -5,19 +5,21 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GitHub Page</title>
         <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #f2f2f2;
-        }
-      
-      .container {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 20px;
-        background-color: #fff;
-          border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+
+          body {
+            font-family: 'Roboto', sans-serif; /* Custom Google Font */
+            background: url('background.jpg') center/cover no-repeat; /* Background image */
+            color: #333; /* Text color */
+          }
+
+          .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
       
       .question {
         font-size: 18px;
@@ -45,7 +47,7 @@
    <body>
         <div class="container">
         <h1>Question 1: </h1>
-        <h2>Select the band that you have detected (1-7).</h2>
+        <h4>Select the band that you have detected (1-7).</h4>
         <select id="question1">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -56,21 +58,24 @@
         <option value="7">7</option>
         <option value="8">8</option>
         </select>
-        
+        <p></p>
+
         <h1>Question 2:</h1>
-        <h2>Type in the band that you have detected in 1-5, use comma to seperate mulitple bands like "1,3"</h2>
+        <h4>Type in the band that you have detected in 1-5, use comma to seperate mulitple bands like "1,3"</h4>
         <input type="text" id="question2" placeholder="Enter answers separated by commas">
-        
+        <p></p>
         
         <h1>Question 3:</h1>
-        <h2>Type in the band that you have detected in 1-4, use comma to seperate mulitple bands like "1,3"</h2>
+        <h4>Type in the band that you have detected in 1-4, use comma to seperate mulitple bands like "1,3"</h4>
         <input type="text" id="question3" placeholder="Enter answers separated by commas">
-        
+        <p></p>
+
         <p id="bottom"></p>
         <button onclick="calculateHV()">Calculate HV score</button>
-        
+        <p></p>
         
         <p id="result"></p>
+        <p></p>
         
         <script>
         function calculateHV() {
@@ -94,7 +99,7 @@
             }
           }
           
-          document.getElementById("result").textContent = "HV_VAR: " + hv_var;
+          document.getElementById("result").textContent = "HV score: " + hv_var;
         }
       </script>
     </div>
