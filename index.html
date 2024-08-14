@@ -95,6 +95,7 @@
         <script>
         function calculateHV() {
           var hv_var = 0;
+          var LD50 = 0;
           var answer1 = document.getElementById("question1").value;
           var answer2 = document.getElementById("question2").value.split(/,|，/).map(Number);
           
@@ -113,9 +114,14 @@
               hv_var += 1;
             }
           }
+
+          var LD50 = hv_var - 8;
+
           
-          document.getElementById("result").textContent = "HV score: " + hv_var;
+          document.getElementById("result").textContent = "HV score: " + hv_var + "<br>LD50: 10<sub>" + LD50 + "</sub>";
         }
+
+
       </script>
     </div>
         </body>
