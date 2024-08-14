@@ -96,6 +96,8 @@
         function calculateHV() {
           var hv_var = 0;
           var LD50 = 0;
+          var CR = "CS";
+          var hv = "non-hv";
           var answer1 = document.getElementById("question1").value;
           var answer2 = document.getElementById("question2").value.split(/,|，/).map(Number);
           
@@ -115,10 +117,18 @@
             }
           }
 
-          var LD50 = hv_var - 8;
+          if (answer2.filter(value => [1, 3].includes(value)).length >= 1) {
+            CR = "CR"
+          }
+
+          if (hv_var >= 4) {
+            hv = "hv"
+          }
+
+          var LD50 = 8 - hv_var;
 
           
-          document.getElementById("result").textContent = "HV score: " + hv_var + "<br>LD50: 10<sub>" + LD50 + "</sub>";
+          document.getElementById("result").textContent = "HV score: " + hv_var + "\nLD50: 10^" + LD50 + "\nCRhv type: " + CR + hv + "KP";
         }
 
 
