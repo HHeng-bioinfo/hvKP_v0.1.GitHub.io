@@ -128,21 +128,10 @@
           var LD50 = 8 - hv_var;
 
 
+          document.getElementById("result").innerHTML = "HV score: " + hv_var + "<br>LD50: 10<sup>" + LD50 + "</sup><br>CRhv type: " + CR + hv + "KP";
 
-          var resultElement = document.getElementById("result");
-          resultElement.textContent = "";
 
-          var text1 = document.createTextNode("HV score: " + hv_var);
-          var br1 = document.createElement("br");
-          var text2 = document.createTextNode("LD50: 10^" + b);
-          var br2 = document.createElement("br");
-          var text3 = document.createTextNode("CRhv type: " + CR + hv + "KP");
 
-          resultElement.appendChild(text1);
-          resultElement.appendChild(br1);
-          resultElement.appendChild(text2);
-          resultElement.appendChild(br2);
-          resultElement.appendChild(text3);
         }
 
 
