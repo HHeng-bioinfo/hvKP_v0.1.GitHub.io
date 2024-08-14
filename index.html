@@ -84,9 +84,9 @@
         <p></p>
 
         <h3>HV score: </h3>
-        <p>High virulence: 4~5; medium virulence: 2~3; low virulence: 1</p>
         <p id="bottom"></p>
-        <button onclick="calculateHV()">Calculate HV score</button>
+        <button onclick="calculateHV()">Calculate the isolate</button>
+        <p>High virulence: 4~5; medium virulence: 2~3; low virulence: 1</p>
         <p></p>
         
         <p id="result"></p>
@@ -127,8 +127,22 @@
 
           var LD50 = 8 - hv_var;
 
-          
-          document.getElementById("result").textContent = "HV score: " + hv_var + "\nLD50: 10^" + LD50 + "\nCRhv type: " + CR + hv + "KP";
+
+
+          var resultElement = document.getElementById("result");
+          resultElement.textContent = "";
+
+          var text1 = document.createTextNode("HV score: " + hv_var);
+          var br1 = document.createElement("br");
+          var text2 = document.createTextNode("LD50: 10^" + b);
+          var br2 = document.createElement("br");
+          var text3 = document.createTextNode("CRhv type: " + CR + hv + "KP");
+
+          resultElement.appendChild(text1);
+          resultElement.appendChild(br1);
+          resultElement.appendChild(text2);
+          resultElement.appendChild(br2);
+          resultElement.appendChild(text3);
         }
 
 
