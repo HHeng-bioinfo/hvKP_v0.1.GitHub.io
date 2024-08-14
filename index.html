@@ -94,7 +94,7 @@
         function calculateHV() {
           var hv_var = 0;
           var answer1 = document.getElementById("question1").value;
-          var answer2 = document.getElementById("question2").value.split(",").map(Number);
+          var answer2 = document.getElementById("question2").value.split(/,|，/).map(Number);
           
           if (answer1 == 1 || answer1 == 2 || answer1 == 5) {
             hv_var += 3;
