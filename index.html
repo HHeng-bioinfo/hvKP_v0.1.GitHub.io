@@ -84,10 +84,11 @@
         <p></p>
 
         <h3>HV score: </h3>
+        <p>High virulence: 4~5; medium virulence: 2~3; low virulence: 1</p>
         <p id="bottom"></p>
         <button onclick="calculateHV()">Calculate the isolate</button>
         <p></p>
-        <p>High virulence: 4~5; medium virulence: 2~3; low virulence: 1</p>
+
         
         <p id="result"></p>
         <p></p>
@@ -100,6 +101,7 @@
           var hv = "non-hv";
           var answer1 = document.getElementById("question1").value;
           var answer2 = document.getElementById("question2").value.split(/,|，/).map(Number);
+          var answer3 = document.getElementById("question3").value.split(/,|，/).map(Number);
           
           if (answer1 == 1 || answer1 == 2 || answer1 == 5) {
             hv_var += 3;
